@@ -2,32 +2,36 @@
 
 ## Overview
 
-This project builds a **deep learning model using PyTorch** to classify chest X-ray images into two categories: **NORMAL** or **PNEUMONIA**. The model uses **transfer learning with the ResNet-18 architecture**, a convolutional neural network that has been pretrained on a large image dataset.
+This project builds a **deep learning model using PyTorch** to classify chest X-ray images into two categories: **NORMAL** or **PNEUMONIA**. The model uses **transfer learning with the ResNet-18 architecture**, a convolutional neural network pretrained on a large image dataset.
 
 Chest X-ray analysis is an important application of **medical image classification** in artificial intelligence. By leveraging transfer learning, the model can reuse visual features learned from large datasets and adapt them to identify pneumonia in X-ray images.
 
 This project demonstrates a complete deep learning workflow including:
 
-- Loading and preprocessing image datasets
+- Loading and preprocessing medical image datasets
 - Applying **transfer learning** with a pretrained CNN
 - Training a deep learning model using PyTorch
 - Evaluating the model on test images
 - Exporting predictions to a CSV file
 
-The repository provides a clear example of how **deep learning models can be applied to medical imaging problems**.
+The repository demonstrates how **deep learning models can be applied to medical imaging tasks**.
 
 ---
 
 # Dataset
 
-The dataset consists of **chest X-ray images** organized into two categories:
+The dataset used for this project is available on Kaggle:
 
-| Label | Class |
-|------|------|
-| 0 | NORMAL |
-| 1 | PNEUMONIA |
+**Kaggle Dataset:**  
+https://www.kaggle.com/datasets/munemshariarshams/chest-x-ray-dataset
 
-The dataset is organized into folders compatible with **PyTorch's ImageFolder dataset loader**.
+Due to GitHub limitations on the number of files in a repository, the dataset is **not included directly in this repository**.
+
+### Download Instructions
+
+1. Download the dataset from the Kaggle link above.
+2. Extract the dataset inside the project directory.
+3. Ensure the dataset structure matches the following:
 
 ```
 dataset/
@@ -41,17 +45,15 @@ dataset/
     └── PNEUMONIA/
 ```
 
-Each folder contains X-ray images corresponding to the respective class.
-
-The dataset included in this repository is a **small sample subset** intended for demonstrating the deep learning pipeline and allowing the project to run quickly.
+Each folder contains chest X-ray images corresponding to the respective class.
 
 ---
 
 # Model Architecture
 
-The project uses **ResNet-18**, a convolutional neural network architecture designed for image recognition tasks.
+This project uses **ResNet-18**, a convolutional neural network architecture designed for image recognition tasks.
 
-ResNet (Residual Network) introduces **skip connections**, which allow the network to train deeper architectures without suffering from vanishing gradient problems.
+ResNet (Residual Network) introduces **skip connections**, allowing deep neural networks to train more effectively.
 
 ### Model Workflow
 
@@ -65,7 +67,7 @@ ResNet-18 Convolutional Layers (pretrained)
 Feature Extraction
 
 ↓
-Fully Connected Layer (modified)
+Modified Fully Connected Layer
 
 ↓
 Binary Output
@@ -78,7 +80,7 @@ The pretrained layers are **frozen**, and only the final classification layer is
 
 # Project Workflow
 
-The project contains two main stages: **training the model** and **evaluating the model**.
+The project consists of two main stages: **training the model** and **evaluating the model**.
 
 ---
 
@@ -86,7 +88,7 @@ The project contains two main stages: **training the model** and **evaluating th
 
 The training process is handled by `train.py`.
 
-This script performs the following steps:
+The script performs the following steps:
 
 1. Loads the chest X-ray training dataset
 2. Applies image preprocessing and resizing
@@ -129,7 +131,6 @@ outputs/predictions.csv
 | 0 | 1 |
 | 1 | 0 |
 | 2 | 1 |
-| 3 | 0 |
 
 Where:
 
@@ -157,15 +158,13 @@ python -m pip install torch torchvision pandas numpy
 | **torch** | Core deep learning framework used to build and train neural networks |
 | **torchvision** | Provides pretrained models and image dataset utilities |
 | **pandas** | Used to organize predictions and export them to CSV |
-| **numpy** | Provides numerical computation utilities used in machine learning |
+| **numpy** | Provides numerical computation utilities |
 
 ---
 
 # How to Run the Project
 
 ### Step 1 — Train the Model
-
-Run the training script:
 
 ```
 python train.py
@@ -187,8 +186,6 @@ resnet_xray_model.pth
 
 ### Step 2 — Generate Predictions
 
-Run the evaluation script:
-
 ```
 python evaluate.py
 ```
@@ -209,9 +206,8 @@ outputs/predictions.csv
 
 # Files Included
 
-| File / Folder | Description |
-|---------------|-------------|
-| `dataset/` | Chest X-ray images organized into training and testing folders |
+| File | Description |
+|-----|-------------|
 | `model.py` | Defines the ResNet-18 transfer learning model architecture |
 | `train.py` | Trains the model on the chest X-ray dataset |
 | `evaluate.py` | Loads the trained model and generates predictions |
@@ -238,3 +234,6 @@ Deep learning models like this can be applied to:
 
 ---
 
+# Author
+
+Portfolio project demonstrating **deep learning, transfer learning, and medical image classification using PyTorch**.
