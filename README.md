@@ -9,9 +9,9 @@ Chest X-ray analysis is an important application of **medical image classificati
 This project demonstrates a complete deep learning workflow including:
 
 - Loading and preprocessing medical image datasets
-- Applying **transfer learning** with a pretrained CNN
+- Applying **transfer learning** with a pretrained convolutional neural network
 - Training a deep learning model using PyTorch
-- Evaluating the model on test images
+- Evaluating the model on unseen test images
 - Exporting predictions to a CSV file
 
 The repository demonstrates how **deep learning models can be applied to medical imaging tasks**.
@@ -20,18 +20,18 @@ The repository demonstrates how **deep learning models can be applied to medical
 
 # Dataset
 
-The dataset used for this project is available on Kaggle:
+The dataset used in this project is hosted on Kaggle.
 
 **Kaggle Dataset:**  
 https://www.kaggle.com/datasets/munemshariarshams/chest-x-ray-dataset
 
-Due to GitHub limitations on the number of files in a repository, the dataset is **not included directly in this repository**.
+Due to GitHub limitations on the number of files that can be uploaded to a repository, the dataset is **not included directly in this repository**.
 
-### Download Instructions
+## Download Instructions
 
 1. Download the dataset from the Kaggle link above.
 2. Extract the dataset inside the project directory.
-3. Ensure the dataset structure matches the following:
+3. Ensure the folder structure matches the following:
 
 ```
 dataset/
@@ -53,9 +53,9 @@ Each folder contains chest X-ray images corresponding to the respective class.
 
 This project uses **ResNet-18**, a convolutional neural network architecture designed for image recognition tasks.
 
-ResNet (Residual Network) introduces **skip connections**, allowing deep neural networks to train more effectively.
+ResNet (Residual Network) introduces **skip connections**, allowing deep neural networks to train more effectively and avoid vanishing gradient problems.
 
-### Model Workflow
+## Model Workflow
 
 ```
 Input X-Ray Image (224×224)
@@ -97,13 +97,15 @@ The script performs the following steps:
 5. Trains the model on the dataset
 6. Saves the trained model weights
 
-Output produced:
+After training completes, the trained model file is generated automatically:
 
 ```
 resnet_xray_model.pth
 ```
 
-This file contains the trained neural network parameters.
+This file contains the learned parameters of the neural network.
+
+The model file is **not included in the repository** because it is generated automatically when the training script is executed.
 
 ---
 
@@ -158,13 +160,13 @@ python -m pip install torch torchvision pandas numpy
 | **torch** | Core deep learning framework used to build and train neural networks |
 | **torchvision** | Provides pretrained models and image dataset utilities |
 | **pandas** | Used to organize predictions and export them to CSV |
-| **numpy** | Provides numerical computation utilities |
+| **numpy** | Provides numerical computation utilities used in machine learning workflows |
 
 ---
 
 # How to Run the Project
 
-### Step 1 — Train the Model
+## Step 1 — Train the Model
 
 ```
 python train.py
@@ -174,9 +176,9 @@ This will:
 
 - load the dataset
 - train the neural network
-- save the trained model
+- generate the trained model file
 
-Output generated:
+Output generated automatically:
 
 ```
 resnet_xray_model.pth
@@ -184,7 +186,7 @@ resnet_xray_model.pth
 
 ---
 
-### Step 2 — Generate Predictions
+## Step 2 — Generate Predictions
 
 ```
 python evaluate.py
@@ -196,7 +198,7 @@ This will:
 - evaluate the test dataset
 - export predictions
 
-Output generated:
+Output generated automatically:
 
 ```
 outputs/predictions.csv
@@ -211,9 +213,18 @@ outputs/predictions.csv
 | `model.py` | Defines the ResNet-18 transfer learning model architecture |
 | `train.py` | Trains the model on the chest X-ray dataset |
 | `evaluate.py` | Loads the trained model and generates predictions |
-| `outputs/predictions.csv` | CSV file containing model predictions |
-| `resnet_xray_model.pth` | Saved trained neural network model |
 | `README.md` | Project documentation |
+
+---
+
+# Repository Notes
+
+The following files are **generated automatically when running the project** and are not included in the repository:
+
+- `resnet_xray_model.pth` — trained neural network model
+- `outputs/predictions.csv` — prediction output file
+
+These files will be created automatically when running the training and evaluation scripts.
 
 ---
 
@@ -233,5 +244,4 @@ Deep learning models like this can be applied to:
 - **Automated medical screening systems**
 
 ---
-
 
