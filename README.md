@@ -234,6 +234,4 @@ Deep learning models like this can be applied to:
 
 ---
 
-# Author
 
-Portfolio project demonstrating **deep learning, transfer learning, and medical image classification using PyTorch**.
