@@ -143,16 +143,6 @@ Where:
 
 ---
 
-# Installation and Dependencies
-
-Install the required Python libraries using:
-
-```
-python -m pip install torch torchvision pandas numpy
-```
-
----
-
 # Python Libraries Used
 
 | Library | Purpose |
